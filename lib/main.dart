@@ -36,14 +36,49 @@ class MyHomePage extends StatelessWidget {
       children: <Widget>[
       Container(
       width: double.infinity,
-        child:Column(children : <Widget>[
-         Card(
-              color: Colors.blue,
-              child: Text('CHART!'),
+        child: Card(
+              
               elevation: 5,
-            )],),     
+              child: Container(
+              
+                padding: EdgeInsets.all(5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    TextField(
+                      style: TextStyle(
+                        backgroundColor: Colors.white,
+                        fontSize: 18
+                      ),
+                      decoration: InputDecoration(
+                        labelText: 'title'
+                      ),
+                    ),
+                     TextField(
+                      style: TextStyle(
+                        backgroundColor: Colors.white,
+                        fontSize: 18
+                      ),
+                      decoration: InputDecoration(
+                        labelText: 'amount'
+                      ),
+                    ),
+                    FlatButton(
+                      child: Text('add transaction',
+                      style: TextStyle(color: Colors.purple,)
+                      ),
+                      onPressed: () {},
+                    
+                    ),
+                  ],
+                ),
+              ),
+              
+
+              
+            ),),     
      
-      ),//first part
+      //first part
      Column(
      children: transaction.map( (tx)
       {
