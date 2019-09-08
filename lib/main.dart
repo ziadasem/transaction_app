@@ -43,11 +43,34 @@ class MyHomePage extends StatelessWidget {
       {
         return Card(
           child: Row(children: <Widget>[
-            Container(child: Text(tx.amount.toString()),),
+            Container(child: Text(tx.amount.toString()),
+            decoration : BoxDecoration( 
+            border: Border.all(
+            color: Colors.blue[900],
+            ),
+            
+            ) ,
+            margin: EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 15,
+            ),
+            padding: EdgeInsets.all(5),
+            ),//first part
             Column(
+              
               children: <Widget>[
-                Text(tx.tittle),
-                Text(tx.dateTime.toString()),
+                Text(tx.tittle,       //TITTLE TEXT
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                
+                  
+                ) ,
+                
+                ),
+                Text(tx.dateTime.toString(),
+                 textAlign: TextAlign.left,
+                ),
 
               ],
             ),
