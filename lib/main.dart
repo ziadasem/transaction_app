@@ -4,7 +4,16 @@ import './transaction.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final List<Transaction> transaction = [
+  @override
+  Widget build(BuildContext context) {
+      return MaterialApp(title:'My Transaction App',home:MyHomePage() ,) ;
+  }
+
+}
+
+
+class MyHomePage extends StatelessWidget {
+ final List<Transaction> transaction = [
     Transaction( id : '1',
      tittle : 'shoes',
      amount : 68.99 ,
@@ -29,16 +38,27 @@ class MyApp extends StatelessWidget {
             ),     
      
       ),//first part
-      Column(children: transaction.map( (tx) {
-        return Card(  
-            child: Text(tx.tittle),
+     Column(
+     children: transaction.map( (tx)
+      {
+        return Card(
+          child: Row(children: <Widget>[
+            Container(child: Text(tx.amount.toString()),),
+            Column(
+              children: <Widget>[
+                Text(tx.tittle),
+                Text(tx.dateTime.toString()),
+
+              ],
+            ),
+
+          ],),
         );
-      }).toList()),
+      }
+
+     ).toList(),)
       ],
       )
-     
     );
   }
 }
-
-
