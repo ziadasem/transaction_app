@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import './models/transaction.dart';
-
+import './widget/user_transactions.dart';
+import 'widget/new_transactions.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   
+
   
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
 
 
 class MyHomePage extends StatelessWidget {
+  final  List <Transaction> transaction = [] ;
 
 
 
@@ -27,7 +30,8 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(title: Text('Transaction'),),
       body  :Column(
       children: <Widget>[
-      
+        User_transactions(),
+    
              ],),);
   }
 }
