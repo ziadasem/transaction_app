@@ -36,11 +36,12 @@ class MyHomePage extends StatelessWidget {
       children: <Widget>[
       Container(
       width: double.infinity,
-        child: Card(
+        child:Column(children : <Widget>[
+         Card(
               color: Colors.blue,
               child: Text('CHART!'),
               elevation: 5,
-            ),     
+            )],),     
      
       ),//first part
      Column(
