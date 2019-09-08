@@ -16,35 +16,29 @@ class MyApp extends StatelessWidget {
   ] ;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter App',
-      home: MyHomePage(),
+    return Scaffold(
+      appBar: AppBar(title: Text('Transaction'),),
+      body  :Column(
+      children: <Widget>[
+      Container(
+      width: double.infinity,
+        child: Card(
+              color: Colors.blue,
+              child: Text('CHART!'),
+              elevation: 5,
+            ),     
+     
+      ),//first part
+      Column(children: transaction.map( (tx) {
+        return Card(  
+            child: Text(tx.tittle),
+        );
+      }).toList()),
+      ],
+      )
+     
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter App'),
-      ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text('CHART!'),
-              elevation: 5,
-            ),
-          ),
-          Card(
-            child: Text('LIST OF TX'),
-          ),
-        ],
-      ),
-    );
-  }
-}
+
