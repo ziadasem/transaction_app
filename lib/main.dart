@@ -28,10 +28,12 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text('Transaction'),),
-      body  :Column(
-      children: <Widget>[
-        User_transactions(),
+      body  :SingleChildScrollView(
+        child: Column(
+        children: <Widget>[
+          User_transactions(),
     
-             ],),);
+               ],),
+      ),);
   }
 }

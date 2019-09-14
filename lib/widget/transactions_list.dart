@@ -12,8 +12,10 @@ Transaction_list(this.transaction);
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: transaction.map((tx) {
-        return Card(
+
+      children :<Widget>[ ListView.builder(
+        itemBuilder: (ctx , index) {
+          return  Card(
           child: Row(
             children: <Widget>[
               Container(
@@ -29,7 +31,7 @@ Transaction_list(this.transaction);
                 ),
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  '\$${tx.amount}',
+                  '\$${transaction[index].amount}',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -41,14 +43,14 @@ Transaction_list(this.transaction);
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    tx.tittle,
+                    transaction[index].tittle,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    DateFormat.yMMMd().format(tx.dateTime),
+                    DateFormat.yMMMd().format(transaction[index].dateTime),
                     style: TextStyle(
                       color: Colors.grey,
                     ),
@@ -58,7 +60,7 @@ Transaction_list(this.transaction);
             ],
           ),
         );
-      }).toList(),
-    );
-  }
-}
+      } 
+        ,itemCount: transaction.length,
+      )]);
+  }}
