@@ -11,9 +11,9 @@ Transaction_list(this.transaction);
   
   @override
   Widget build(BuildContext context) {
-    return Column(
-
-      children :<Widget>[ ListView.builder(
+    return Container(
+height: 350,
+        child: ListView.builder(
         itemBuilder: (ctx , index) {
           return  Card(
           child: Row(
@@ -62,5 +62,5 @@ Transaction_list(this.transaction);
         );
       } 
         ,itemCount: transaction.length,
-      )]);
+      ));
   }}
