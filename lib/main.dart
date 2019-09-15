@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       return MaterialApp(title:'My Transaction App',home:MyHomePage() ,
       theme: ThemeData(
           primarySwatch: Colors.purple ,
-         
+         fontFamily: 'QuickSand'
       ),
       ) ;
   }
