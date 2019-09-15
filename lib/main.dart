@@ -10,7 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
  
-      return MaterialApp(title:'My Transaction App',home:MyHomePage() ,) ;
+      return MaterialApp(title:'My Transaction App',home:MyHomePage() ,
+      theme: ThemeData(
+          primarySwatch: Colors.purple ,
+         
+      ),
+      ) ;
   }
 
 }
@@ -65,10 +70,11 @@ setState(() {
       ],
       ),
       floatingActionButton: FloatingActionButton(
-      child: IconButton(icon: Icon(Icons.add),
+      child: Icon(Icons.add),
+      
       onPressed: (){
          _startAddNewTransaction(context);
-},),),
+},),
       body  :SingleChildScrollView(
         child: Column(
         children: <Widget>[    
