@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+
 import './models/transaction.dart';
+
 import './widget/transactions_list.dart';
 import 'widget/new_transactions.dart';
+import 'widget/chart.dart';
 
 void main() => runApp(MyApp());
 
@@ -54,6 +57,16 @@ setState(() {
   
   }
 
+List<Transaction> get _recentTransactions {
+  return transaction.where((tx) {
+      return tx.dateTime.isAfter(
+        DateTime.now().subtract(
+          Duration(days: 7),
+        ),
+      );
+    }).toList();    
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -75,7 +88,9 @@ setState(() {
 },),
       body  :SingleChildScrollView(
         child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[    
+        Chart(_recentTransactions),
         Transaction_list(transaction),
    
                ],
